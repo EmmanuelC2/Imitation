@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="utf-8">
+    <title>Speak to ChatGPT</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+</head>
+
+<body>
+    <canvas id="renderCanvas"></canvas>
+
+    <div class="audio-recording-container">
+
+        <h1 class="title">Speak To ChatGPT</h1>
+
+        <label>Voices</label>
+
+        <select name="voices" id="tts-voices" style="margin-bottom:30px">
+            <option value="en-US-AmberNeural" selected="selected">Amber</option>
+            <option value="en-US-AnaNeural">Ana</option>
+            <option value="en-US-AriaNeural">Aria</option>
+            <option value="en-US-AshleyNeural">Ashley</option>
+            <option value="en-US-BrandonNeural">Brandon</option>
+            <option value="en-US-ChristopherNeural">Christopher</option>
+            <option value="en-US-CoraNeural">Cora</option>
+            <option value="en-US-ElizabethNeural">Elizabeth</option>
+            <option value="en-US-EricNeural">Eric</option>
+            <option value="en-US-GuyNeural">Guy</option>
+            <option value="en-US-JacobNeural">Jacob</option>
+            <option value="en-US-JaneNeural">Jane</option>
+            <option value="en-US-JasonNeural">Jason</option>
+            <option value="en-US-JennyMultilingualNeural">Jenny Multilingual</option>
+            <option value="en-US-JennyNeural">Jenny</option>
+            <option value="en-US-MichelleNeural">Michelle</option>
+            <option value="en-US-MonicaNeural">Monica</option>
+            <option value="en-US-NancyNeural">Nancy</option>
+            <option value="en-US-RogerNeural">Roger</option>
+            <option value="en-US-SaraNeural">Sara</option>
+            <option value="en-US-SteffanNeural">Steffan</option>
+            <option value="en-US-TonyNeural">Tony</option>
+        </select>
+
+        <button class="start-recording-button">Start</button>
+
+        <div class="recording-contorl-buttons-container hide">
+
+            <button class="cancel-recording-button">Cancel</button>
+
+            <Button class="stop-recording-button">Stop</button>
+
+        </div>
+        
+        <div class="text-indication-of-audio-playing-container">
+
+            <p class="text-indication-of-audio-playing hide">ChatGPT is Thinking<span>.</span><span>.</span><span>.</span></p>
+
+        </div>
+
+        <div id="chat-area">
+
+            <div id="chat-text-area">
+
+                <ul id="chat-ul">
+
+                    <li class="chat-text">Hello, click start to ask your question then click stop or press space once to start and then again to stop.</li>
+
+                </ul>
+
+            </div>
+
+            <form id="textbox-form">
+
+                <input type="text" autocomplete="off" id="textbox"></input>
+
+            </form>
+            
+        </div>
+
+        <form action="/logout?_method=DELETE" method="POST">
+            <button id="logout-button" type="submit">Log Out</button>
+        </form>
+
+    </div>
+    
+    <audio controls class="audio-element hide">
+    </audio>
+
+</body>
+
+<script src="js/audio-recording.js"></script>
+<script src="js/main.js"></script>
+
+</html>
